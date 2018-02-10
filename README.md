@@ -1,4 +1,4 @@
-# elastic-beanstalk-docker-vowpal
+# terraform-elastic-beanstalk-docker-vowpal
 
 
 Deployment process:
