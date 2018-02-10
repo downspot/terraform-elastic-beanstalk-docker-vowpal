@@ -1,4 +1,4 @@
-# ursa-vw
+# elastic-beanstalk-docker-vowpal
 
 
 Deployment process:
