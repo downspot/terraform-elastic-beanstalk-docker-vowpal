@@ -1,0 +1,19 @@
+{
+  "AWSEBDockerrunVersion": 2,
+  "containerDefinitions": [
+    {
+      "name": "islandsound_vowpal_wabbit",
+      "image": "islandsound/vowpal_wabbit",
+      "memory": 128,
+      "portMappings": [
+        {
+          "hostPort": 26542,
+          "containerPort": 26542
+        }
+      ],
+      "command": [
+	"--daemon", "--foreground", "--cb_explore", "4", "-f", "/root/cb.model"
+      ]
+    }
+  ]
+}
