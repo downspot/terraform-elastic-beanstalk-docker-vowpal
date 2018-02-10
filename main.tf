@@ -43,7 +43,7 @@ resource "aws_sns_topic" "health_updates" {
 }
 
 resource "aws_sns_topic_subscription" "health_updates_sns" {
-  topic_arn                       = "arn:aws:sns:${var.region}:${data.aws_caller_identity.current.account_id}:${var.application_name}-${var.env_name}"
+  topic_arn                       = "${aws_sns_topic.health_updates.arn}"
   protocol                        = "lambda"
   endpoint                        = "arn:aws:lambda:${var.region}:${data.aws_caller_identity.current.account_id}:function:example-sns"
   raw_message_delivery            = "false"
@@ -76,7 +76,7 @@ resource "aws_elastic_beanstalk_environment" "example-vw" {
   setting {
     namespace = "aws:autoscaling:launchconfiguration"
     name      = "EC2KeyName"
-    value     = "URSA"
+    value     = "EXAMPLE"
   }
 
   setting {
@@ -200,7 +200,7 @@ resource "aws_elastic_beanstalk_environment" "example-vw" {
   setting {
     namespace = "aws:elasticbeanstalk:sns:topics"
     name      = "Notification Topic ARN"
-    value     = "arn:aws:sns:${var.region}:${data.aws_caller_identity.current.account_id}:${var.application_name}-${var.env_name}"
+    value     = "${aws_sns_topic.health_updates.arn}"
   }
 
   setting {
