@@ -1,4 +1,4 @@
-## ursa-vw
+# ursa-vw
 
 
 Deployment process:
@@ -20,6 +20,6 @@ App deployment as of now is through the web UI. Deployment file will be `Dockerr
 
 
 
-# FIX
+### todo
 
 There seems to be be a bug in the way I have SNS section written should not ask for 2 questions per deploy.
