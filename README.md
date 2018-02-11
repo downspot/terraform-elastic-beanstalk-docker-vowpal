@@ -9,8 +9,6 @@ Edit `.tfvars` files if need be and run the following:
 
 `./deploy.sh environment` (only preprod and prod, additional environments require `.tfvars` files).
 
-Answer yes to both questions.
-
 
 To destroy an environment:
 

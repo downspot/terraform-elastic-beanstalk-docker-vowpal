@@ -15,8 +15,4 @@ fi
 
 terraform workspace select example-vw-${1}
 
-terraform apply -var-file=${1}.tfvars
-
-sleep 5 
-
-terraform apply -var-file=${1}.tfvars
+terraform apply -auto-approve -var-file=${1}.tfvars
