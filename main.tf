@@ -12,6 +12,7 @@ variable "elb_subnetids" {}
 variable "tag_env" {}
 variable "env_name" {}
 variable "ec2_role" {}
+variable "solution_stack_name" {}
 
 data "aws_caller_identity" "current" {}
 
@@ -52,7 +53,7 @@ resource "aws_sns_topic_subscription" "health_updates_sns" {
 resource "aws_elastic_beanstalk_environment" "example-vw" {
   name                = "${var.application_name}-${var.env_name}"
   application         = "${var.application_name}"
-  solution_stack_name = "64bit Amazon Linux 2017.09 v2.8.4 running Multi-container Docker 17.09.1-ce (Generic)"
+  solution_stack_name = "${var.solution_stack_name}"
   tier                = "WebServer"
 
   tags {
