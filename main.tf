@@ -21,7 +21,7 @@ data "terraform_remote_state" "network" {
   workspace   	= "${terraform.workspace}"
 
   config {
-    bucket 	= "example-terraform"
+    bucket 	= "example-terraform-foobar"
     key   	= "terraform.tfstate"
     region 	= "${var.region}"
   }
@@ -29,9 +29,9 @@ data "terraform_remote_state" "network" {
 
 terraform {
   backend "s3" {
-    bucket  = "example-terraform"
+    bucket  = "example-terraform-foobar"
     key       = "terraform.tfstate"
-    region   = "us-east-1"
+    region   = "foobar"
   }
 }
 
