@@ -3,7 +3,9 @@
 
 Deployment process:
 
-Edit `.tfvars` files if need be and run the following:
+Edit `Dockerrun.aws.json` if need be and upload to `s3://example-eva/example-vw/` before deploying. 
+
+Edit `.tfvars` files if need be and run the following.
 
 `./deploy.sh environment region`
 

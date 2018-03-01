@@ -50,11 +50,19 @@ resource "aws_sns_topic_subscription" "health_updates_sns" {
   raw_message_delivery            = "false"
 }
 
+resource "aws_elastic_beanstalk_application_version" "default" {
+  name        = "Dockerrun.aws.json-${var.env_name}"
+  application = "${var.application_name}"
+  bucket      = "example-eva"
+  key         = "example-vw/Dockerrun.aws.json"
+}
+
 resource "aws_elastic_beanstalk_environment" "example-vw" {
   name                = "${var.application_name}-${var.env_name}"
   application         = "${var.application_name}"
   solution_stack_name = "${var.solution_stack_name}"
   tier                = "WebServer"
+  version_label       = "${aws_elastic_beanstalk_application_version.default.name}"
 
   tags {
     ProductCode = "PRD00001453"
