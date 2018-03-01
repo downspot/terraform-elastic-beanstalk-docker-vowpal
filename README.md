@@ -1,9 +1,9 @@
-# terraform-elastic-beanstalk-docker-vowpal
+## example-vw
 
 
 Deployment process:
 
-Edit `Dockerrun.aws.json` if need be and upload to `s3://example-eva/example-vw/` before deploying. 
+Edit `Dockerrun.aws.json` if need be and upload to `s3://example-terraform/example-vw/<region id>` before deploying. 
 
 Edit `.tfvars` files if need be and run the following.
 

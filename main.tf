@@ -53,7 +53,7 @@ resource "aws_sns_topic_subscription" "health_updates_sns" {
 resource "aws_elastic_beanstalk_application_version" "default" {
   name        = "Dockerrun.aws.json-${var.env_name}"
   application = "${var.application_name}"
-  bucket      = "example-eva"
+  bucket      = "example-terraform-foobar"
   key         = "example-vw/Dockerrun.aws.json"
 }
 
