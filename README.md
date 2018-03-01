@@ -1,4 +1,4 @@
-## example-vw
+# terraform-elastic-beanstalk-docker-vowpal
 
 
 Deployment process:
